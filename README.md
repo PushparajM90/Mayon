@@ -1,16 +1,53 @@
-# React + Vite
+# Mayon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern food ordering static website built with React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Premium responsive UI for mobile, tablet, and desktop
+- Dark and light theme support with persisted preference
+- First-visit mobile number registration with local returning-user recognition
+- Modular food menu cards with dish IDs, pricing, hover states, and order selection
+- Customer feedback form prepared for EmailJS
+- Order flow prepared for WhatsApp admin delivery
+- Google Sheets tracking service stub for ordered food, delivered food, customers, and timestamps
+- Clean component, data, hook, config, and service folders
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+src/
+  components/       Reusable page sections and UI controls
+  config/           Future integration environment mapping
+  data/             Company and menu data
+  hooks/            Theme and reusable React logic
+  services/         User, feedback, WhatsApp, order, and Sheets adapters
+```
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Production Checks
+
+```bash
+npm run lint
+npm run build
+```
+
+## Future Credentials
+
+Copy `.env.example` to `.env.local` and fill these when the integrations are ready:
+
+```text
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
+VITE_WHATSAPP_ADMIN_NUMBER=
+VITE_GOOGLE_SHEETS_ENDPOINT=
+```
+
+The current service files log integration-ready payloads so real providers can be wired in without changing the page components.
